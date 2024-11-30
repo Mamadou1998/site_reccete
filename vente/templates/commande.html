@@ -1,0 +1,28 @@
+<!-- commande.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Finalisation de la commande</h1>
+
+    {% if panier %}
+        <h2>Résumé de votre panier</h2>
+        <ul>
+            {% for item in panier %}
+                <li>
+                    {{ item.produit }} {{ item.total }} €
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Total : {{ total_panier }} €</h3>
+
+        <!-- Bouton pour payer -->
+        <form method="GET" action="{% url 'paiement' %}">
+            <button type="submit" class="btn btn-primary">Payer</button>
+        </form>
+
+    {% else %}
+        <p>Votre panier est vide. Ajoutez des produits avant de passer à la commande.</p>
+        <a href="{% url 'produits' %}">Retour aux produits</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,82 @@
+/* Corps général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffaf3; /* Fond doux et chaleureux */
+    color: #5a3d2b; /* Couleur texte brun */
+}
+
+/* Barre de navigation */
+nav {
+    background-color: #f8d8c4; /* Couleur pastel rosée */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #5a3d2b; /* Brun chocolaté */
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d36b44; /* Orange clair */
+    transform: scale(1.1);
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #fce8d5; /* Couleur pêche douce */
+    color: #5a3d2b;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #5a3d2b;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #d36b44;
+}

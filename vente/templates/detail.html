@@ -1,0 +1,17 @@
+<!-- detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ produit.nom }}</h1>
+    <p><strong>Description :</strong> {{ produit.description }}</p>
+    <p><strong>Prix :</strong> {{ produit.prix }} €</p>
+    
+    <!-- Bouton Ajouter au panier -->
+    <form action="{% url 'ajouter_au_panier' produit.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">Ajouter au panier</button>
+    </form>
+
+    <!-- Retour à la liste des produits -->
+    <a href="{% url 'produits' %}" class="btn btn-secondary">Retour à la liste des produits</a>
+{% endblock %}

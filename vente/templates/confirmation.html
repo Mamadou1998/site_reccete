@@ -1,0 +1,18 @@
+<!-- confirmation.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Merci pour votre commande !</h1>
+
+<p>Mode de paiement : {{ paiement.mode }}</p>
+<p>Montant total : {{ paiement.total }} €</p>
+
+<h2>Produits achetés :</h2>
+<ul>
+    {% for item in panier %}
+        <li>{{ item.produit }} {{ item.quantite }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'index' %}" class="btn btn-primary">Retour à l'accueil</a>
+{% endblock %}

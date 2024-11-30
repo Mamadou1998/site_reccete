@@ -1,0 +1,24 @@
+<!-- produits.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Nos Produits</h1>
+    <div class="produits-list">
+        {% for produit in produits %}
+            <div class="produit">
+                <h2>{{ produit.nom }}</h2>
+                <p>{{ produit.description }}</p>
+                <p>{{ produit.prix }} €</p>
+                
+                <!-- Bouton "Voir" pour les détails du produit -->
+                <a href="{% url 'produit_detail' produit_id=produit.id %}" class="btn btn-primary">Voir</a>
+
+                <!-- Bouton "Ajouter au panier" -->
+                <form action="{% url 'ajouter_au_panier' produit.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success">Ajouter au panier</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

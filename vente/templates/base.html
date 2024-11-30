@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}GELATO&CO{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/produits">Produits</a></li>
+            <li><a href="/panier">Panier</a></li>
+            <li><a href="/contact">Contact</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/compte">Mon compte</a></li>
+                <li><a href="/logout">Déconnexion</a></li>
+            {% else %}
+                <li><a href="/login">Connexion</a></li>
+                <li><a href="/register">Inscription</a></li>
+            {% endif %}
+        </ul>
+    </nav>    
+
+    <!-- Contenu principal -->
+    <div class="container">
+        {% block content %}
+        <!-- Le contenu spécifique de chaque page sera ici -->
+        {% endblock %}
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 - Ma Pâtisserie. Tous droits réservés.</p>
+            <ul>
+                <li><a href="/mentions-legales">Mentions légales</a></li>
+                <li><a href="/politique-confidentialite">Politique de confidentialité</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>
