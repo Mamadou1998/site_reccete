@@ -1,2 +1,16 @@
 # Ignorer les fichiers sensibles
 .env
+
+# Ignorer l'environnement virtuel
+venv/
+
+# Ignorer les fichiers Python compilés
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorer les fichiers Django
+db.sqlite3
+
+# Ignorer les fichiers de log
+*.log
